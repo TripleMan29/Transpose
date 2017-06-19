@@ -22,20 +22,20 @@ class Test {
         assertFileContent("files/oFile.txt",
                 "A D \n" +
                         "B E \n" +
-                        "C  ")
+                        "C   ")
         val transposeTest2 = Transpose(10, true, false)
         transposeTest2.transpose(Scanner(Paths.get("files/iFile.txt")), PrintWriter("files/oFile.txt"))
         assertFileContent("files/oFile.txt",
                 "         A          D \n" +
                         "         B          E \n" +
-                        "         C           ")
+                        "         C            ")
         val transposeTest3 = Transpose(1, false, true)
         transposeTest3.transpose(Scanner(Paths.get("files/iFile2.txt")), PrintWriter("files/oFile.txt"))
         assertFileContent("files/oFile.txt",
-                "2 4  \n" +
-                        "2 6  \n" +
-                        "3 5  \n" +
-                        " 1  ")
+                "2 4   \n" +
+                        "2 6   \n" +
+                        "3 5   \n" +
+                        "  1   ")
     }
 
     @Test
@@ -46,20 +46,20 @@ class Test {
         assertFileContent("files/oFile3.txt",
                 "A D \n" +
                         "B E \n" +
-                        "C  ")
+                        "C   ")
         val args2 = arrayOf("files/iFile.txt", "-o", "files/oFile3.txt", "-r")
         t.launch(args2)
         assertFileContent("files/oFile3.txt",
                 "         A          D \n" +
                         "         B          E \n" +
-                        "         C           ")
+                        "         C            ")
         val args3 = arrayOf("files/iFile2.txt", "-o", "files/oFile3.txt", "-a", "1", "-t")
         t.launch(args3)
         assertFileContent("files/oFile3.txt",
-                "2 4  \n" +
-                        "2 6  \n" +
-                        "3 5  \n" +
-                        " 1  ")
+                "2 4   \n" +
+                        "2 6   \n" +
+                        "3 5   \n" +
+                        "  1   ")
     }
 
 }

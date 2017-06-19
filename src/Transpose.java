@@ -1,5 +1,3 @@
-import org.apache.commons.io.FileUtils;
-
 import java.io.*;
 import java.util.*;
 
@@ -52,7 +50,7 @@ class Transpose {
                     int len;
                     if (width != 0) len = width;
                     else len = 1;
-                    if (j != maxSize - 1) for (int n = 0; n < len; n++) {
+                    if (j != maxSize - 1) for (int n = 0; n < len + 1; n++) {
                         str.append(" ");
                     }
                 }
